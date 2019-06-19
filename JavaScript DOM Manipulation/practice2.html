@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Check list Application</title>
+	<link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="practice2.css">
+</head>
+<body>
+	<!-- My First Check List Application -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<div class="wrap">
+					<h3 class="my-5 heading">My Check List</h3>
+					<input type="text" class="form-control my-5" id="input" placeholder="Enter your Task">
+					<ol class="checkList list-group"></ol>
+					<!-- <input type="text" id="shedule" class="form-control my-5" placeholder="Check Shedule"> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="Bootstrap/jquery-3.3.1.min.js"></script>
+	<script src="Bootstrap/bootstrap.min.js"></script>
+
+	<!-- Our Script -->
+	<script type="text/javaScript">
+	// Shedule Checker Application
+
+	// All CSS Style are Triggered from external CSS Files
+
+	// Selecting Elements from HTML DOM
+	var input = document.querySelector('#input')
+	var ul = document.querySelector('.checkList')
+	var shedule = document.querySelector('#shedule')
+
+	// Add Elements
+	input.addEventListener('keypress', (e) => {
+		if(e.keyCode === 13) {
+			let data = e.target.value
+			newTask(ul,data);
+			e.target.value = '';
+
+			// Experiment : to store data on an array
+			let array = [];
+			array.push(data)
+			array.splice(1);
+			// Travers function
+			function traversFun(array,callback) {
+				let emptyArray = [];
+				for(var i = 0; i < array.length; i++){
+					if(array[i]) {
+						array.push(callback(array[i]));
+					}
+				}
+				return emptyArray;
+			}
+			var result = traversFun(array,function(element) {
+				console.log('Element is : ', element);
+			})
+		    console.log(result);
+
+
+
+
+		}
+	}, false);
+
+	// newTask Function
+	function newTask(ul,data) {
+		let li = document.createElement('li');
+		li.className = 'list-group-item d-flex item';
+
+		// CheckList span
+
+
+		// Before checkName, A checklist / radio button shuld be added 
+		// Obviously the data should be stored in a variable / Array 
+		// Else the data will be lost.
+
+
+
+
+		let checkName = document.createElement('a');
+		checkName.className = 'checkName';
+		checkName.innerHTML = data;
+		checkName.setAttribute('href','#');
+
+		// To prevent Default Behavior of 'Anchor Tag (a)'
+		checkName.addEventListener('click', (e) => {
+			// Something will happen
+		}, false);
+
+
+		// Delete Button Span
+		let deleteBtn = document.createElement('span');
+		deleteBtn.className = 'delete ml-auto';
+		deleteBtn.innerText = 'Delete'
+
+		deleteBtn.addEventListener('click', (e) => {
+			ul.removeChild(li);
+		},false);
+
+
+		li.appendChild(checkName)
+		li.appendChild(deleteBtn)
+
+		ul.appendChild(li)
+	}
+
+	// Sedule Button on Bottom:
+
+	// shedule.addEventListener('keypress', (e) => {
+	// 	if(e.keyCode === 13) {
+	// 		// Something will happen
+	// 	}
+	// }, false);
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM Events : JavaScript DOM Manipulation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body> 	<!-- JavaScript DOM Manipulation : FreeCodeCamp.org -->
+	<div class="container">
+		<h3 class="header">JavaScript DOM Manipulation</h3>
+		<p>Started Learning javaScrpt DOM and also started exploreing more and more about dom and it's documentation from FreeCodeCamp and JavaScript Related Topics from Medium,Youtube,Google</p> 
+
+		<a href="#" class="boxed-btn">Mouse Hover Me</a>
+
+		<!-- Trigered from javaScript >> onclick="changeText(this) -->
+		<h2>What's are you doing now ? </h2>
+
+		<!-- Another Button -->
+		<a href="#" class="bordered-btn">Click to see Magic</a>
+
+	</div>
+
+
+	<script>
+	// DOM Events
+	// There are a lot of DOM Events which can be applied after 
+	// Selecting the elements using javaSctipt Selctor
+
+	var h2 = document.querySelector('.container h2'); // selecting desire element
+
+	// Experimental for h2 element
+	function changeColor() {
+		this.style.color = 'yellow'
+	}
+
+	h2.onmouseover = changeColor;
+	h2.onclick = changeText;
+	// another function:
+	function changeText() {
+		this.style.color = 'salmon';
+		this.innerHTML = 'I am learning JavaScript DOM Manipulation';
+	}
+
+	// button Style : 
+	var button = document.querySelector('.boxed-btn')
+	button.onmouseover = mouseOver;
+	button.onmouseout = mouseOut
+
+	// function for mouse hover/over Event
+	function mouseOver() {
+		this.innerHTML = "Welcome , I'm Shaon kabir"
+		document.querySelector('body').style.background = 'red'
+
+		this.setAttribute('style','color:red;background:black;display:block;padding:60px;text-align:center;')
+	}
+
+	// function for mouse out event
+	function mouseOut() {
+		this.innerHTML = "Thank You!! <br/> Hover Again";
+		this.style.background = 'white'
+		document.querySelector('body').setAttribute('style','background:blue;color:#fff')
+
+	}
+
+	// Bordered button
+
+	var borderedBtn = document.querySelector('.bordered-btn');
+	borderedBtn.onclick = increaseText;
+
+	function increaseText() {
+		this.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias veniam, perspiciatis aut aliquam itaque aspernatur soluta animi ex nihil dolore, officia iure fugit dolor nisi quas sit, obcaecati neque odio?"
+	}
+
+
+	</script>
+</body>
+</html>

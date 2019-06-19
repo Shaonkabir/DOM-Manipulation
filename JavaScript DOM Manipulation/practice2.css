@@ -1,0 +1,59 @@
+/* Practice Two : CheckList Application */
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+.heading{
+	font-size: 30px;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 4px;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 15px;
+}
+.heading::before, .heading::after {
+	position: absolute;
+	content: '';
+	z-index: 1;
+	left: auto;
+	right: 0;
+	top: 0%;
+	width: 90px;
+	height: 80px;
+	margin-left: -45px;
+	background: #09600d;
+	border-radius: 50%;
+}
+.heading::after {
+	width: 50px;
+	background: #fa1119;
+	margin-left: -25px;
+	height: 50px;
+	margin-top: 15px;
+	right: 2.8%;
+}
+.checkName {
+	font-size: 20px;
+	color: #333;
+	font-weight: 700;
+}
+.delete {
+	background: red;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.delete:hover {
+	background-color: black;
+	transition: all .2s linear;
+}
+.checkName:hover {
+	color: blue !important;
+	cursor: zoom-in;
+	font-weight: normal;
+	transition: all .2s linear;
+}

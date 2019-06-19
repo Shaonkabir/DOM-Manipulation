@@ -1,0 +1,89 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+/*.container {
+	padding: 50px 150px;
+	font-size: 18px;
+	line-height: 2;
+	text-align: center;
+}*/
+.boxed-btn{
+	display: inline-block;
+	background: red;
+	color:white;
+	padding: 10px 40px;
+	font-size: 25px;
+	border-radius: 50px;
+	margin: 25px 0;
+	font-weight: 700;
+}
+.container h2 {
+	cursor: pointer;
+}
+
+.bordered-btn {
+	display: inline-block;
+	border:1px solid;
+	color:black;
+	padding: 10px 40px;
+	border-radius: 50px;
+	text-transform: uppercase;
+	margin: 30px 0;
+
+}
+
+
+/*  For DOM Nodes  */
+.poem{text-align: center;}
+.name {
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 30px 0;
+}
+.name span {
+    display: block;
+    font-size: 79%;
+    padding: ;
+    color: blue;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+/* addEventListener */
+.simple-btn {
+	display: inline-block;
+	font-size: 30px;
+	color: black;
+	text-align: center;
+	margin: 30px 85px;
+	border: 1px solid;
+	border-radius: 50px;
+	padding: 1px 35px;
+}
+
+
+/* For button Experiment */
+p{
+	visibility: hidden;
+}
+
+/* My Todo Application Stylesheet */
+.todoApp h3 span {
+    display: block;
+    font-size: 58%;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 3px;
+    padding-top: 15px;
+    color: red;
+}
+.todoApp h3 {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin: 10px 0;
+    display: block;
+}

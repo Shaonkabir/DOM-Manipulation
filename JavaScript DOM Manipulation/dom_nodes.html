@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM Nodes : JavaScript DOM Manipulation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body> 	<!-- JavaScript DOM Manipulation : FreeCodeCamp.org -->
+	<div class="container">
+		<h3 class="header">JavaScript DOM Manipulation : DOM Nodes</h3>
+		<hr>
+		<div class="poem">
+			<p class="name">Twincle,Twincle,Little Star <span>Jane Taylor</span></p>
+			<p class="lineOne">Twinkle, twinkle, little star, </p>
+			<p class="lineTwo">How I wonder what you are! </p>
+		</div>
+	
+	</div>
+
+
+	<script>
+		// Topic : DOM Nodes
+
+		// BuzzWords to Learn :
+
+		// createElement ( to create new element )
+		// createTextNode == element.innerHTML (Basically Do the same things)
+		// appendChild ( to join/push )
+		// insertBefore :  element.insertBefore(which to insert , where to insert)
+		// replaceChild :  element.replaceChild(which to replace , where to replace)
+
+
+		var para = document.createElement("p");
+		var node = document.createTextNode('Up above the world so high,');
+		para.appendChild(node)
+
+		var parent = document.querySelector('.poem');
+		parent.appendChild(para);
+
+		var para2 = document.createElement('p');
+		para2.innerHTML = 'Like a diamond in the sky.'
+
+		var firstChild = document.querySelector('.lineOne');
+		parent.insertBefore(para2, firstChild);
+
+		var empthyLine = document.createElement('p');
+		empthyLine.innerHTML = ' '; // Empty string
+
+		parent.replaceChild(empthyLine,para2)
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Todo Application</title>
+	<link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- My First JavaScript Web Application -->
+	<div class="myTodoApp">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center">
+					<div class="todoApplication">
+						<h3 class="my-5">My Todo Application : Practice</h3>
+						<input type="text" id="input" class="form-control" placeholder="Enter your Task">
+						<ul class="todoList list-group"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="Bootstrap/jquery-3.3.1.min.js"></script>
+	<script src="Bootstrap/bootstrap.min.js"></script>
+
+	<!-- Our Script -->
+	<script type="text/javaScript">
+	// My Todo Application Scripts		
+	const input = document.querySelector('#input');
+	const ul = document.querySelector('.todoList');
+
+	// event will be happened when enter key is pressed on Input filed
+	input.addEventListener('keypress', (e) => {
+		// console.log(e) // To get keyCode
+		if(e.keyCode === 13) {
+			let data = e.target.value;
+			createNewTask(ul,data);
+			e.target.value = ''
+		}
+	});
+
+	// createNewTask Function 
+	function createNewTask(ul,data) {
+		let li = document.createElement('li');
+		li.innerHTML = data;
+		li.setAttribute('style','text-align:left;')
+		li.className = 'list-group-item d-flex'
+
+		// for close icon:
+		let span = document.createElement('span');
+		span.innerHTML ='X';
+		span.setAttribute('style','color:red;cursor:pointer;');
+		span.className = 'ml-auto'
+		// for closing Event:
+		span.addEventListener('click',() => {
+			ul.removeChild(li)
+		});
+
+		li.appendChild(span)
+		ul.appendChild(li)
+
+	}
+	</script>
+</body>
+</html>

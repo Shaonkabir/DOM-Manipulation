@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addEventListener : JavaScript DOM Manipulation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body> 	<!-- JavaScript DOM Manipulation : FreeCodeCamp.org -->
+	<div class="container">
+		<h3 class="header">JavaScript DOM Manipulation</h3>
+		<p>Started Learning javaScrpt DOM and also started exploreing more and more about dom and it's documentation from FreeCodeCamp and JavaScript Related Topics from Medium,Youtube,Google <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iusto, temporibus molestias vel aperiam eius quaerat fugit provident tempora, dolore, labore iste perspiciatis consectetur odit tenetur. Dolorem hic excepturi, a!</p>
+
+		<!-- Button for appling event listener -->
+		<a href="#" class="simple-btn">Click Here</a>
+
+		<a href="#" class="boxed-btn">Mouse Hover Me</a>
+
+		<!-- Trigered from javaScript >> onclick="changeText(this) -->
+		<h2>What's are you doing now ? </h2>
+
+		<!-- Another Button -->
+		<a href="#" class="bordered-btn">Click to see Magic</a>
+
+	</div>
+
+
+	<script>
+
+	// Topic: addEventListener 
+
+	// Syntax : element.addEventListener(event, function ,useCapture);
+
+
+	// selecting elements:
+	var container = document.querySelector('.container');
+	var h3 = document.querySelector('.container h3');
+	var paragraph = document.querySelector(' p');
+	var boxedButton = document.querySelector('.boxed-btn');
+	var h2 = document.querySelector('.container h2');
+	var borderedBtn = document.querySelector('.bordered-btn');
+	var simpleBtn = document.querySelector('.simple-btn');
+
+	// Appling the EEVENT LISTENER
+
+	// bordered button style
+	borderedBtn.addEventListener('click', function() {
+		container.style.background = 'yellow'
+	});
+	//boxed button style : click event
+	boxedButton.onclick = function() {
+		container.style.background = 'blue'	
+	}
+
+	// boxed button : mouseover and mouseup Event
+
+	// Syntax : element.addEventListener(eventName, fn/fnName ,useCapture(if true) );
+
+	boxedButton.addEventListener('mouseover',mouseOver);
+	boxedButton.addEventListener('mouseout',mouseOut);
+
+
+	// function for mouse hover/over Event
+	function mouseOver() {
+		this.innerHTML = "Welcome , I'm Shaon kabir"
+		container.style.background= 'red'
+	}
+
+	// function for mouse out event
+	function mouseOut() {
+		this.innerHTML = "Thank You !!  Hover Again";
+		container.style.background = 'white'
+	}
+
+
+	// to hide and show paragraph by clicking on button
+	let isShown = false;
+	simpleBtn.addEventListener('click',function(){
+		if(isShown) {
+			isShown = false;
+			this.innerHTML = 'Show';
+			paragraph.style.visibility = 'hidden';
+		} else {
+			isShown = true;
+			this.innerHTML = 'Hide';
+			paragraph.style.visibility = 'visible'
+		}
+	})
+	
+	</script>
+</body>
+</html>
+
